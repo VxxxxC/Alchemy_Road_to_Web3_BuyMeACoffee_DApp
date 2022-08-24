@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   // Contract Address & ABI
-  const contractAddress = "0xDBa03676a2fBb6711CB652beF5B7416A53c1421D";
+  const contractAddress = "0xcef5e69C4a94928571A49e68D0c906d529Aac31b";
   const contractABI = abi.abi;
 
   // Component state
@@ -27,6 +27,8 @@ export default function Home() {
   const isWalletConnected = async () => {
     try {
       const { ethereum } = window;
+      console.log(window)
+      console.log(ethereum)
 
       const accounts = await ethereum.request({method: 'eth_accounts'})
       console.log("accounts: ", accounts);
@@ -166,20 +168,20 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Buy Albert a Coffee!</title>
+        <title>Buy VxxxxC a Coffee!</title>
         <meta name="description" content="Tipping site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Buy Albert a Coffee!
+          Buy VxxxxC a Coffee!
         </h1>
         
         {currentAccount ? (
           <div>
             <form>
-              <div class="formgroup">
+              <div className="formgroup">
                 <label>
                   Name
                 </label>
@@ -193,9 +195,9 @@ export default function Home() {
                   />
               </div>
               <br/>
-              <div class="formgroup">
+              <div className="formgroup">
                 <label>
-                  Send Albert a message
+                  Send VxxxxC a message
                 </label>
                 <br/>
 
@@ -228,7 +230,7 @@ export default function Home() {
       {currentAccount && (memos.map((memo, idx) => {
         return (
           <div key={idx} style={{border:"2px solid", "border-radius":"5px", padding: "5px", margin: "5px"}}>
-            <p style={{"font-weight":"bold"}}>"{memo.message}"</p>
+            <p style={{"font-weight":"bold"}}>{memo.message}</p>
             <p>From: {memo.name} at {memo.timestamp.toString()}</p>
           </div>
         )
@@ -240,7 +242,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Created by @thatguyintech for Alchemy's Road to Web3 lesson two!
+          "Created by @thatguyintech for Alchemy's Road to Web3 lesson two!
         </a>
       </footer>
     </div>
